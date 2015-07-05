@@ -11,15 +11,16 @@ Dim qtyrcvd As Long
 Dim j As Integer
 Dim s1 As Range
 Dim rangenamefound As Boolean
-Dim initialproxy As String
+
 Sub main()
-Dim c As String
-c = FindRange()
-Call Formatter(c)
+
+Dim rangeVal As String
+rangeVal = FindRange()
+Call Formatter(rangeVal)
 End Sub
 
 Function FindRange() As String
-
+Dim initialproxy As String
 With Range("A1")
 rangenamefound = False
 
@@ -38,13 +39,14 @@ End With
 FindRange = initialproxy
 End Function
 
-Sub Formatter(initialproxy As String)
-With Range(initialproxy)
+Sub Formatter(rangeVal As String)
+
+With Range(rangeVal)
 lastrow = .Cells.SpecialCells(xlCellTypeLastCell).Row
 lastrow = lastrow - 1
 End With
 Set s1 = ActiveWorkbook.ActiveSheet.Range("I2").Cells(1, 1)
-With Range(initialproxy)
+With Range(rangeVal)
     For i = lastrow To 1 Step -1
     If .Cells(i, 1).Value = "" Then
     poqty = s1.Cells(i, 10)
