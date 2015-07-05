@@ -1,7 +1,7 @@
 Attribute VB_Name = "Module1"
 Sub VARIANCE()
 Attribute VARIANCE.VB_ProcData.VB_Invoke_Func = "V\n14"
-'
+'(added new comment)
 ' VARIANCE Macro
 '
 ' Keyboard Shortcut: Ctrl+Shift+V
