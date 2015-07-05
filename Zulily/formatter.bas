@@ -1,11 +1,5 @@
 Attribute VB_Name = "Module1"
-Sub VARIANCE()
-Attribute VARIANCE.VB_ProcData.VB_Invoke_Func = "V\n14"
-'(added new comment)
-' VARIANCE Macro
-'
 ' Keyboard Shortcut: Ctrl+Shift+V
-'Dim isfound As Boolean
 Dim ncolns As Integer
 Dim nrows As Integer
 Dim i As Integer
@@ -18,7 +12,13 @@ Dim j As Integer
 Dim s1 As Range
 Dim rangenamefound As Boolean
 Dim initialproxy As String
+Sub main()
+Dim c As String
+c = FindRange()
+Call Formatter(c)
+End Sub
 
+Function FindRange() As String
 
 With Range("A1")
 rangenamefound = False
@@ -35,8 +35,10 @@ ncolns = Range(.Cells(1, 1), .End(xlToRight)).Columns.Count
     Next j
    Loop
 End With
+FindRange = initialproxy
+End Function
 
- 
+Sub Formatter(initialproxy As String)
 With Range(initialproxy)
 lastrow = .Cells.SpecialCells(xlCellTypeLastCell).Row
 lastrow = lastrow - 1
@@ -177,3 +179,5 @@ End With
     End With
     Range("A2").Select
 End Sub
+
+
