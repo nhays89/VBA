@@ -1,5 +1,5 @@
 # VBA 
-Key terms:
+Key terms: <\n>
 Shortage = items that were never received in full from the vendor.
 Overage = items that exceeded initial purchase order from vendor. 
 P.O = Purchase Order
